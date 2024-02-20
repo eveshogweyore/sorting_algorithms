@@ -13,6 +13,8 @@ void insertion_sort_list(listint_t **list)
 
 	if (list)
 	{
+		curr = *list;
+
 		while (curr)
 		{
 			lshift = curr;
