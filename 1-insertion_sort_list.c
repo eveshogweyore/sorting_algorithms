@@ -22,7 +22,7 @@ void insertion_sort_list(listint_t **list)
 				curr = curr->next;
 				while (lshift->prev)
 				{
-					if (lshift->prev->n < lshift->n)
+					if (lshift->prev->n <= lshift->n)
 						break;
 
 					if (lshift->prev)
