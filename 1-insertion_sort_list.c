@@ -9,40 +9,43 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *curr = *list, *lshift;
+	listint_t *curr, *lshift;
 
-	while (curr)
+	if (list)
 	{
-		lshift = curr;
-
-		if (curr->prev)
+		while (curr)
 		{
-			curr = curr->next;
+			lshift = curr;
 
-			while (lshift->prev)
+			if (curr->prev)
 			{
-				if (lshift->prev->n < lshift->n)
-					break;
+				curr = curr->next;
 
-				if (lshift->prev)
-					lshift->prev->next = lshift->next;
+				while (lshift->prev)
+				{
+					if (lshift->prev->n < lshift->n)
+						break;
 
-				if (lshift->next)
-					lshift->next->prev = lshift->prev;
+					if (lshift->prev)
+						lshift->prev->next = lshift->next;
 
-				lshift->next = lshift->prev;
-				lshift->prev = lshift->next->prev;
-				lshift->next->prev = lshift;
+					if (lshift->next)
+						lshift->next->prev = lshift->prev;
 
-				if (lshift->prev)
-					lshift->prev->next = lshift;
-				else
-					*list = lshift;
+					lshift->next = lshift->prev;
+					lshift->prev = lshift->next->prev;
+					lshift->next->prev = lshift;
 
-				print_list(*list);
+					if (lshift->prev)
+						lshift->prev->next = lshift;
+					else
+						*list = lshift;
+
+					print_list(*list);
+				}
 			}
+			else
+				curr = curr->next;
 		}
-		else
-			curr = curr->next;
 	}
 }
