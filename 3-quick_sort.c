@@ -29,9 +29,7 @@ void quick_sort(int *array, size_t size)
 	low = 0;
 
 	if (size <= 1)
-	{
 		return;
-	}
 
 	if (track == 1)
 	{
