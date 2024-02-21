@@ -32,7 +32,7 @@ void quick_sort(int *array, size_t size)
 		return;
 	}
 
-	print_array(array, size);
+	/*print_array(array, size);*/
 	pivot = part(array, low, high);
 
 	quick_sort(array, pivot);
@@ -59,8 +59,9 @@ int part(int *array, int low, int high)
 		{
 			i++;
 			swp(&array[i], &array[j]);
-			print_array(array, high + 1);
+			/*print_array(array, high + 1);*/
 		}
+		
 	}
 	swp(&array[i + 1], &array[high]);
 
