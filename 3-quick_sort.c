@@ -65,15 +65,20 @@ int part(int *array, int low, int high, int *r_arr, size_t r_size)
 		if (array[j] < pivot)
 		{
 			i++;
-			swp(&array[i], &array[j]);
-			if (i != j)
-				print_array(r_arr, r_size);
-			/*print_array(array, high + 1);*/
+			if (array[i] != array[j])
+			{
+				swp(&array[i], &array[j]);
+				if (i != j)
+					print_array(r_arr, r_size);
+			}
 		}
 	}
-	swp(&array[i + 1], &array[high]);
-	if ((i + 1) != high)
-		print_array(r_arr, r_size);
+	if (array[i + 1] != array[high])
+	{
+		swp(&array[i + 1], &array[high]);
+		if ((i + 1) != high)
+			print_array(r_arr, r_size);
+	}
 
 	return (i + 1);
 }
