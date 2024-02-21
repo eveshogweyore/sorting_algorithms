@@ -64,6 +64,7 @@ int part(int *array, int low, int high)
 		
 	}
 	swp(&array[i + 1], &array[high]);
+	print_array(array, high + 1);
 
 	return (i + 1);
 }
