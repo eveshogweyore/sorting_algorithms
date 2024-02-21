@@ -44,7 +44,6 @@ void quick_sort(int *array, size_t size)
 	quick_sort(array, pivot);
 	quick_sort(array + pivot + 1, size - pivot - 1);
 }
-
 /**
  * part - partitions array recursively.
  * @array: array to be partitioned.
