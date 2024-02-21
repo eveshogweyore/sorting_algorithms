@@ -22,7 +22,7 @@ void print_list(const listint_t *list);
 void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
-void swp(int a, int b);
+void swp(int *a, int *b);
 int part(int *array, int low, int high);
 void quick_sort(int *array, size_t size);
 
