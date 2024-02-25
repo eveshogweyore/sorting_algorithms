@@ -9,9 +9,31 @@ void swpnode(listint_t **x, listint_t **y)
 {
 	listint_t *temp;
 
-	temp = y;
-	y = x;
-	x = temp;
+	if (*x == NULL || *y == NULL || *x == *y)
+		return;
+
+	temp = (*x)->next;
+
+	if ((*x)->next)
+		(*x)->next->prev = (*x)->prev;
+
+	if ((*x)->prev)
+		(*x)->prev->next = temp;
+
+	(*x)->next = (*x)->next->next;
+
+	if ((*x)->next)
+	{
+		(*x)->prev = (*x)->next->prev;
+		(*x)->prev->next = (*x);
+		(*x)->next->prev = (*x);
+	}
+
+	if (!(*x)->next)
+	{
+		(*x)->prev = (*x)->prev->next;
+		(*x)->prev->next = (*x);
+	}
 }
 /**
  * cocktail_sort_list - sorts doubly linked w/ cocktail shaker algo.
