@@ -91,3 +91,31 @@ typedef struct listint_s
     struct listint_s *next;
 } listint_t;
 ```
+
+## Functions Overview
+
+| Function Name 		| Description 													|
+| ----------------------|---------------------------------------------------------------|
+| `insertion_sort_list`			| Sorts a doubly linked list in ascending order, updating the list in-place and printing its state after each change.			|
+| `selection_sort`			| Sorts an array of integers in ascending order using selection sort algorithm and prints teh array after every swap.			|
+| `swp`			| Swaps the values of two integers.			|
+| `quick_sort`			| Implements quicksort algorithm using Lomute partitioning to sort an array of integers in ascending order.			|
+| `part`			| Partitions an array around a pivot element, rearranges elements such that those less than the pivot come before it, those greater go after it, and prints the array after each swap.			|
+| `shell_sort`			| Sorts an array of integers in ascending order using the shell sort algorithm with the Knuth sequence and prints the array after each iteration of the gap reduction.			|
+
+## Compilation
+
+All files were compiled on Ubuntu 20.04 LTS using gcc with these options:
+
+`$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c`
+
+## Requirements
+
+- All code uses the `Betty` style and is checked witih `betty-style.pl` and `betty-doc.pl`.
+- No global variables were allowed or used.
+- No more than 5 functions per file.
+- All function prototypes are included in the header file called `main.h`.
+- All header files are include guarded.
+- Any use of standard library functions like `printf`, `puts`, ... was forbidden.
+- A list/array doesn't need to be sorted if its size is less than 2.
+
